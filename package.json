@@ -1,0 +1,26 @@
+{
+  "name": "connector-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "pkg package.json --output sk-app"
+  },
+  "bin": "index.js",
+  "pkg": {
+    "assets": [
+      "node_modules/**/*",
+      "**/*"
+    ],
+    "targets": [
+      "host"
+    ]
+  },
+  "author": "Organization",
+  "license": "ISC",
+  "dependencies": {
+    "@skinternal/skconnectorsdk": "latest",
+    "axios": "^0.21.4"
+  }
+}
