@@ -27,6 +27,12 @@ const exampleConnector = {
       info: `The URL of the POST call`,
       required: true
     },
+    body: {
+      displayName: 'Body',
+      preferredControlType: 'textField',
+      info: `The body of the POST call`,
+      required: true
+    }    
   },
   capabilities: {
     postHTTP: {
