@@ -14,7 +14,7 @@ const exampleConnector = {
     },
     logos: {
       canvas: {
-        imageFileName: 'connectorLogo.svg',
+        imageFileName: 'pingIdentity.svg',
       },
     },
   },
