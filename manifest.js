@@ -30,6 +30,7 @@ const exampleConnector = {
     body: {
       displayName: 'Body',
       preferredControlType: 'textField',
+      enableParameters: true,
       info: `The body of the POST call`,
       required: true
     }    
