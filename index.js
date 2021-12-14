@@ -1,13 +1,26 @@
 const sdk = require('@skinternal/skconnectorsdk')
 const {serr, compileErr, logger} = require('@skinternal/skconnectorsdk')
 const redisList = 'exampleConnector'
-const api = require('./api')
+const axios = require('axios');
+
+const postHTTP = async (url, body) => {
+  return axios({
+    method: 'post',
+    url: url,
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    data:body
+  })
+};
 
 /**
- * Initialize is the main function to start this service. It initializes sdk with name of the connector.
+ * Performs the necessary processing to initialize the connector
+ * 
  */
 const initialize = async () =>{
   try {
+    // The real thing of note here: registers the connector with the SDK and subscribe to REDIS changes
     const response = await sdk.initalize(redisList)
     console.log(response)
     logger.info('Started connector-example');
@@ -17,13 +30,20 @@ const initialize = async () =>{
   }
 }
 
+/**
+ * This method performs the necessary processing for the 
+ * postHTTP capability for this example connector.
+ * Note that the naming is important 
+ * @param {*} param0 
+ * @returns 
+ */
 sdk.methods.handle_capability_postHTTP = async ({properties}) => {
   logger.info('overriding handle_capability_postHTTP');
   try {  
     console.log(properties);
     const {url, body} = properties;
 
-    const response = await api.postHTTP(url, body);
+    const response = await postHTTP(url, body);
 
     return {
       output: {
