@@ -42,5 +42,5 @@ You will see the logs of your connector in the terminal
 
 They respectively need to be named:
   * logo.png
-  * logo@2x.png
-  * logo@3x.png
+  * logo\@2x.png
+  * logo\@3x.png
