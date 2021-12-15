@@ -1,18 +1,8 @@
 const sdk = require('@skinternal/skconnectorsdk')
 const {serr, compileErr, logger} = require('@skinternal/skconnectorsdk')
 const redisList = 'exampleConnector'
-const axios = require('axios');
+const api = require('./api')
 
-const postHTTP = async (url, body) => {
-  return axios({
-    method: 'post',
-    url: url,
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    data:body
-  })
-};
 
 /**
  * Performs the necessary processing to initialize the connector
@@ -37,13 +27,13 @@ const initialize = async () =>{
  * @param {*} param0 
  * @returns 
  */
-sdk.methods.handle_capability_postHTTP = async ({properties}) => {
+handle_capability_postHTTP = async ({properties}) => {
   logger.info('overriding handle_capability_postHTTP');
   try {  
     console.log(properties);
     const {url, body} = properties;
 
-    const response = await postHTTP(url, body);
+    const response = await api.postHTTP(url, body);
 
     return {
       output: {
@@ -65,4 +55,10 @@ sdk.methods.handle_capability_postHTTP = async ({properties}) => {
   }
 }
 
+sdk.methods.handle_capability_postHTTP = handle_capability_postHTTP
+
 initialize();
+
+module.exports = {
+  handle_capability_postHTTP
+}
