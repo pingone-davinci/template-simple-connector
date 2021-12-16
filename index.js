@@ -10,7 +10,7 @@ const api = require('./api');
  */
 const initialize = async () => {
   try {
-    // The real thing of note here: registers the connector with the SDK and subscribe to REDIS changes
+    // The real thing of note here: registers the connector with the SDK and subscribes to REDIS changes
     const response = await sdk.initalize(redisList);
     // console.log(response);
     logger.info('Started connector-example:', response);
