@@ -1,12 +1,11 @@
 const axios = require('axios');
 
-exports.postHTTP = async (url, body) => {
-  return axios({
+exports.postHTTP = async (url, body) =>
+  axios({
     method: 'post',
-    url: url,
+    url,
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
-    data:body
-  })
-};
+    data: body,
+  });
