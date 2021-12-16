@@ -27,6 +27,9 @@ Click on the fourth icon from the top in the left navbar ( Run and Debug )
 Once the drawer opens, at the top of the drawer there should be a little green "play" button icon, click it.
 You will see the logs of your connector in the terminal
 
+# Running Unit Tests
+To run unit tests execute `npm test` which will execute the unit tests defined in \test\index.test.js
+
 # Debugging your connector
   As you write the code for your connector, you will want to be able to debug and test it. Use VSCode built-in debugger to run and debug yor code.
   
