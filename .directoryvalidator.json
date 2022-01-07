@@ -1,0 +1,67 @@
+{
+  "ignoreFiles": [".gitignore", "package-lock.json", ".npmrc"],
+  "ignoreDirs": ["node_modules"],
+  "commonRules": {
+    "rule_dashcase": {
+      "type": "file",
+      "name": "/^[a-z0-9!-]*.js$/"
+    }
+  },
+  "rules": [
+    {
+      "type": "directory",
+      "name": "docs",
+      "isOptional": false,
+      "rules": [
+        {
+          "type": "file",
+          "name": "INDEX.md",
+          "isOptional": false
+        },
+        {
+          "type": "file",
+          "name": "/^.*(.png|.svg)$/",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "type": "directory",
+      "name": "flows",
+      "isOptional": false,
+      "rules": [
+        {
+          "type": "file",
+          "name": "[dash-case].json",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "type": "directory",
+      "name": "manifests",
+      "isOptional": false,
+      "rules": [
+        {
+          "type": "common",
+          "key": "rule_dashcase"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "index.js",
+      "isOptional": false
+    },
+    {
+      "type": "file",
+      "name": "package.json",
+      "isOptional": false
+    },
+    {
+      "type": "file",
+      "name": "README.md",
+      "isOptional": false
+    }
+  ]
+}
