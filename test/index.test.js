@@ -1,3 +1,5 @@
+/* globals describe, expect, it, before */ 
+
 /**
  * Singularkey Unit Tests
  */
