@@ -25,8 +25,8 @@ describe('Unit Tests', () => {
     const properties = data;
     handle_capability_postHTTP(properties).then((res) => {
       expect(res).to.be.an('object');
-      expect(res.output).to.be.exist;
-      expect(res.output.rawResponse).to.be.exist;
+      expect(res.output).to.be.an('object');
+      expect(res.output.rawResponse).to.be.an('object');
       stub1.restore();
       done();
     });
