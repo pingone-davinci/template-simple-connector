@@ -6,7 +6,7 @@ const sinon = require('sinon');
 const sdk = require('@skinternal/skconnectorsdk');
 const api = require('../api');
 
-const { handle_capability_createIncident } = require('../index');
+const { handle_capability_postHTTP } = require('../index');
 
 const { data } = require('./data/properties');
 
