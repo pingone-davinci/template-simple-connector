@@ -3,10 +3,9 @@
     ".gitignore",
     "package-lock.json",
     ".npmrc",
-    ".directoryvalidator.json",
-    ".eslintrc.json"
+    ".directoryvalidator.json"
   ],
-  "ignoreDirs": ["node_modules", ".git"],
+  "ignoreDirs": ["node_modules", ".git", ".nyc_output", "coverage"],
   "commonRules": {
     "rule_dashcase": {
       "type": "file",
