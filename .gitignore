@@ -1,2 +1,7 @@
+# patterns to ignore modules installed and package version locks
 node_modules
 package-lock.json
+
+# patterns to ignore the output of unit tests so as to avoid unwittingly committing them
+.nyc_output/
+coverage/
