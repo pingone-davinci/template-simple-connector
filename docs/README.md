@@ -1,50 +1,182 @@
+# Template Simple Connector
+
+
+## Doc draft
+
+Author: 
+
+
+# Introduction
+
+[Describe the product. List the main use cases the connector supports.]
+
+
 # Setup
 
-## Setting up the target service
 
-Describe how to configure the service to make it ready to use with the connector:
+## Resources
 
-* Example tasks:
-  * Enabling services or features, such as user provisioning or SAML
-  * Creating the credentials or access token needed by the connector
-  * Setting permissions
-* When possible, link to existing topics in the service documentation rather than writing your own instructions
+For information and setup help, see the following sections of the [service name] documentation:
 
 
-## Using the connector in a flow
-
-Explain how to use the connector in a flow for each supported use case.
-
-When possible, link to existing use case documentation and templates rather than writing your own instructions:
-
-* Link to use cases in the main Singular Key documentation, such as “Building an authentication flow” or “Building a registration flow”
-* Link to downloadable sample flows, such as “Authentication flow” or “Registration flow”
+## [Link to resources from the service documentation
 
 
-## UI templates
+## Requirements
 
-Document any forms, prompts, messages, or other UI Studio templates that come with the connector, including:
-
-* Name
-* Description
-* Use cases
-* Required configuration
-* Common customizations
-
-## Troubleshooting
-
-Document steps and tips to address common issues that might happen when setting up the connector:
-
-* How to check that the connection configuration is correct and working
-* Finding and understanding connector information in the log/audit trail
-* Solutions to common problems/complications
+To use the connector, you'll need:
 
 
 
+* [List pre-requisites]
+* 
+
+
+## [Task name]
+
+[Describe what needs to be done before adding the connection in Singular Key]
+
+
+
+1. [Steps]
+2. 
+
+
+## [Task name]
+
+[Describe what needs to be done before adding the connection in Singular Key]
+
+
+
+1. [Steps]
+2. 
+
+
+## Setting up the connector
+
+In Singular Key, add a **PingOne SSO** connection. For help, see [Adding a connection](https://docs.google.com/document/d/1Sc9tD5tn9dl79qOWup0k3eKk5hrNVI8lZPAdm8loeiA/edit#).
+
+
+### Connector settings
+
+[List and explain the connector settings that appear when the connection is opened from the **Connections** page. If you did not cover it earlier in the **Setup** section, tell the user how to complete each configuration field or where to get the information they need.
+
+These typically on the **General** tab, but some connectors have a different name or multiple configuration tabs. Don't document **Capabilities**, or **In Flows**.]
+
+
+# Using the connector in a flow
+
+[Describe how to use the connector after it has been set up.]
+
+You can use the connector in a variety of use cases, such as:
+
+
+## [Use case]
+
+[Describe how to use the connector in this use case. Does it come with a related flow template? Is there a generic use case flow to follow in the Singular Key core documentation?]
+
+
+## [Use case]
+
+[Describe how to use the connector in this use case. Does it come with a related flow template? Is there a generic use case flow to follow in the Singular Key core documentation?]
+
+
+# Capabilities
+
+### Sign in with ZenKey (loginFirstFactor)
+
+
+Passwordless login using the ZenKey app
+
+#### Sign in with ZenKey `button`
+
+#### showPoweredBy `toggleSwitch`
+
+#### skipButtonPress `toggleSwitch`
+
+---
+
+### Get User Info from ZenKey (getUserInfo)
 
 
 
 
+#### Sign in with ZenKey `button`
+
+#### showPoweredBy `toggleSwitch`
+
+#### skipButtonPress `toggleSwitch`
+
+---
+
+### Check SIM Tenure (checkSIMTenure)
 
 
 
+
+#### SIM Tenure URL `textField`
+
+#### Subscriber Type `dropDown`
+
+#### Subject `textField`
+
+#### Phone Number `textField`
+
+---
+
+### ZenKey Server-Initiated Authorize (serverInitiated)
+
+
+
+
+#### Server Initiated Endpoint `textField`
+
+#### Notification URI `textField`
+
+#### Redirect URI `textField`
+
+#### Subscriber Type `dropDown`
+
+#### Subject `textField`
+
+#### Phone Number `textField`
+
+---
+
+### ZenKey Server-Initiated Webhook (webhook)
+
+
+
+
+---
+
+
+
+# Troubleshooting
+
+[Optional section]
+
+
+## Common solutions
+
+[Describe solutions to common problems the user might encounter when setting up or using the connector. If there are any required steps, include them in the **Setup** section.]
+
+
+## Troubleshooting resources
+
+
+### [Resource description]
+
+[Describe other resources, tools, reference information, or links that might be helpful when troubleshooting.]
+
+
+### Testing capabilities
+
+You can test each capability individually. For help, see [Testing capabilities](https://docs.google.com/document/d/1Sc9tD5tn9dl79qOWup0k3eKk5hrNVI8lZPAdm8loeiA/edit#).
+
+
+# Limitations
+
+[Optional section]
+
+[Describe any issues or limitations.]
