@@ -1,4 +1,4 @@
-# SK Connector Pre-GA Doc Template
+# Template Simple Connector
 
 
 ## Doc draft
