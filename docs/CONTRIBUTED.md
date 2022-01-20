@@ -63,8 +63,6 @@ In Singular Key, add a **PingOne SSO** connection. For help, see [Adding a conne
 
 These typically on the **General** tab, but some connectors have a different name or multiple configuration tabs. Don't document **Capabilities**, or **In Flows**.]
 
-Leave this section blank: it will be generated automatically
-
 
 # Using the connector in a flow
 
