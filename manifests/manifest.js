@@ -1,5 +1,5 @@
-const exampleConnector = {
-  connectorId: "exampleConnector",
+const connectorExample = {
+  connectorId: "connectorExample",
   name: "Example Connector",
   serviceName: 'connector-example',
   connectorType: "example",
@@ -95,4 +95,4 @@ const exampleConnector = {
   },
 };
 
-module.exports = exampleConnector;
+module.exports = connectorExample;
