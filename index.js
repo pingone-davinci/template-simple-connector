@@ -1,5 +1,7 @@
 const sdk = require('@skinternal/skconnectorsdk');
 const { serr, compileErr, logger } = require('@skinternal/skconnectorsdk');
+const { get } = require('lodash');
+const connectorManifest = require('./manifests/manifest');
 
 const redisList = 'exampleConnector';
 const api = require('./api');
@@ -10,13 +12,19 @@ const api = require('./api');
  */
 const initialize = async () => {
   try {
+    // Update Manifest
+    if (get(process, 'argv[2]', null) === 'mode=update-manifest') {
+      await sdk.manifestDeploy(connectorManifest);
+      process.exit(0);
+    }
     // The real thing of note here: registers the connector with the SDK and subscribes to REDIS changes
     const response = await sdk.initalize(redisList);
     // console.log(response);
     logger.info('Started connector-example:', response);
   } catch (err) {
-    console.log(err);
     logger.error('Error starting connector-example');
+    logger.error(err);
+    process.exit(1);
   }
 };
 
