@@ -1,9 +1,9 @@
 const connectorExample = {
-  connectorId: "connectorExample",
-  name: "Example Connector",
+  connectorId: 'connectorExample',
+  name: 'Example Connector',
   serviceName: 'connector-example',
-  connectorType: "example",
-  description: "Example Connector HTTP Post Call",
+  connectorType: 'example',
+  description: 'Example Connector HTTP Post Call',
   connectorDetails: null,
   detailImage: null,
   connectorCategories: [{ name: 'Example', value: 'example' }],
@@ -25,15 +25,13 @@ const connectorExample = {
       displayName: 'URL',
       preferredControlType: 'textField',
       info: `The URL of the POST call`,
-      required: true
     },
     body: {
       displayName: 'Body',
       preferredControlType: 'textField',
       enableParameters: true,
       info: `The body of the POST call`,
-      required: true
-    }    
+    },
   },
   capabilities: {
     postHTTP: {
@@ -45,32 +43,28 @@ const connectorExample = {
       inputs: ['*'],
       userViews: [],
       flowConfigView: {
-        items: [
-          { propertyName: 'body' }
-        ],
+        items: [{ propertyName: 'body' }],
       },
       payloadInputSchema: {
         default: {
-          type: "object",
+          type: 'object',
           properties: {
             properties: {
-              type: "object",
+              type: 'object',
               properties: {
                 body: {
-                  type: "string",
-                  description: "The body of the HTTP request"
-                }
+                  type: 'string',
+                  description: 'The body of the HTTP request',
+                },
               },
-              required: [
-                "body",
-              ]
-            }
+              required: ['body', 'url'],
+            },
           },
           example: {
             properties: {
-              body: '{"hello": "world"}'
-            }
-          }
+              body: '{"hello": "world"}',
+            },
+          },
         },
       },
       localOutputSchema: {
@@ -82,16 +76,14 @@ const connectorExample = {
             },
             statusCode: {
               type: 'number',
-            }
-          }
-        }
+            },
+          },
+        },
       },
     },
   },
   accountConfigView: {
-    items: [
-      { propertyName: 'url' }
-    ],
+    items: [{ propertyName: 'url' }],
   },
 };
 
