@@ -23,7 +23,7 @@
             "id": "dogz1en8kc",
             "nodeType": "CONNECTION",
             "connectionId": "fed615849c125d25e7dc01fc2c437fd6",
-            "connectorId": "exampleConnector",
+            "connectorId": "connectorExample",
             "name": "Example Connection",
             "label": "Example Connection",
             "status": "configured",
@@ -166,7 +166,7 @@
   "inputSchema": null,
   "flowColor": "#6AC15C",
   "connectorIds": [
-    "exampleConnector",
+    "connectorExample",
     "httpConnector"
   ],
   "savedDate": 1639448500703,
