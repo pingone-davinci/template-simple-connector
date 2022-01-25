@@ -3,7 +3,7 @@ const { serr, compileErr, logger } = require('@skinternal/skconnectorsdk');
 const { get } = require('lodash');
 const connectorManifest = require('./manifests/manifest');
 
-const redisList = 'exampleConnector';
+const redisList = 'connectorExample';
 const api = require('./api');
 
 /**
