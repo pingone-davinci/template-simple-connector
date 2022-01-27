@@ -15,7 +15,7 @@ const initialize = async () => {
     // Update Manifest
     if (get(process, 'argv[2]', null) === 'mode=update-manifest') {
       await sdk.manifestDeploy(connectorManifest);
-      process.exit(0);
+      return;
     }
     // The real thing of note here: registers the connector with the SDK and subscribes to REDIS changes
     const response = await sdk.initalize(redisList);
@@ -24,7 +24,6 @@ const initialize = async () => {
   } catch (err) {
     logger.error('Error starting connector-example');
     logger.error(err);
-    process.exit(1);
   }
 };
 
