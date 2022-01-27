@@ -126,25 +126,121 @@ const connectorExample = {
         to assign a value to the property passed in to the connector capability when 
         it is invoked.
         Valid values for preferredControlType are:
-          -
+          - button
+          - codeEditor
+          - colorPicker
+          - customFormData
+          - dateTimePicker
+          - dropDown
+          - dropDownAsync
+          - dropDownMultiSelect
+          - dropdown
+          - dropdownWithCreate
+          - formFieldsList
+          - functionArgumentList
+          - geofence
+          - icon
+          - iosSwitch
+          - keyValueList
+          - label
+          - mapping
+          - multipleTextFields
+          - none
+          - radioSelect
+          - screenComponentList
+          - searchableDropdownTimezone
+          - secureTextArea
+          - selectNameValueListColumn
+          - tableViewAttributes
+          - tableViewScopes
+          - textArea
+          - textField
+          - textFieldArrayView
+          - timepicker
+          - toggleSwitch
+          - urlsTableView
+          - userConnectorAttributeMapping
+          - validationRules
+          - variableInputList
        */
       preferredControlType: 'textField',
+
+      /*
+        the enableParameters displays the variable picker tool in the UI field
+        This button is represented with two curly braces {} and allows to pick
+        global variables, flow variables, or output payload from connectors 
+        executing earlier in a flow
+       */ 
       enableParameters: true,
+
+      /*
+       This field is displayed next to the input to describe what the value should be
+       */
       info: 'The body of the POST call',
-    },
+    }
   },
+  /*
+   the 'capabilities' object enumerates the capabilities that the orchestration
+   engine can call and that the UI needs to render configuration panels for
+   */
   capabilities: {
+    /*
+      the 'postHTTP' capability is the only capability implemented in this example connector.
+      Note that the name must match the handle_capability_< capabilty_name_here > in index.js
+     */
     postHTTP: {
       type: 'action',
+      /* 
+       The name of the capability as displayed in the connector UI
+       */
       title: 'Post HTTP',
+      
+      // Subtext for the title of the capability
       subTitle: 'This is an example capability',
+
+      /* 
+        respondToUser is toggled if the capability needs to interact with the user *within* the capability
+        This is different from displaying an HTML form to collect user input using the built-in HTTP connector.
+        For example, if a connector had to display a set of images to the user and have them pick 2 that matched
+        for the capabilty to successfully complete, you would set responseToUser to true and configure a userView
+        to display the images
+        */
       respondToUser: true,
+      
+      /*
+       leave this set to true
+       */
       apiEnabled: true,
-      inputs: ['*'],
+
+      /*
+       this is an array to pass global variables in to the capability
+       some example values you can pass in as inputs:
+        - global.error
+        - global.ip
+        - global.userInfo
+        - global.saml
+
+       */
+      inputs: ['global.ip'],
+
+      /*
+       userViews is an array of UI frames presented to the user within the arc of the 
+       life of the capability. This is an advanced topic left for a more advanced template
+       */
       userViews: [],
+
+      /*
+       the 'flowConfigView' object hold an 'items' array of the properties (defined earlier) 
+       to display in the UI panel specific to this capability
+       */
       flowConfigView: {
         items: [{ propertyName: 'body' }],
       },
+      /*
+       the 'payloadInputSchema' object defines the input schema for this capability
+       You will need to edit only the innermost level of this object to describe
+       how the platform must marshall data provided as valid input
+       */ 
       payloadInputSchema: {
         default: {
           type: 'object',
@@ -152,7 +248,21 @@ const connectorExample = {
             properties: {
               type: 'object',
               properties: {
+                /*
+                 Add your input properties here, at this level
+                 */ 
                 body: {
+                  /*
+                   Make sure you provide the right native javascript 
+                   for runtime validation
+                   Valid types are:
+                     - array
+                     - object
+                     - string
+                     - boolean
+                     - number
+                     - bigint
+                   */
                   type: 'string',
                   description: 'The body of the HTTP request',
                 },
