@@ -15,6 +15,25 @@
   "rules": [
     {
       "type": "directory",
+      "name": ".github",
+      "isOptional": false,
+      "rules": [
+        {
+          "type": "directory",
+          "name": "workflows",
+          "isOptional": false,
+          "rules":[
+            {
+              "type": "file",
+              "name": "semgrep.yml",
+              "isOptional": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "directory",
       "name": "assets",
       "isOptional": false,
       "rules": [
