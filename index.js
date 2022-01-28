@@ -54,11 +54,11 @@ const initialize = async () => {
  *         type: boolean
  *   => isDisabled: the connector is disabled. You may hadnle this gracefully by treating this as a hint to run the capability code as a dry run.
  *         type: boolean
- *   => respondToUser: 
+ *   => respondToUser:
  *         type: boolean
- *   => inputs: 
+ *   => inputs:
  *         type: array
- *   => interactionId: the identifier string for the interaction 
+ *   => interactionId: the identifier string for the interaction
  *         type: string
  *   => connection: redundant information repeating top-level connectionId and connectorId
  *         type: object
