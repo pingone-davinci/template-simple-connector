@@ -29,6 +29,8 @@ const connectorExample = {
   /*
    The connector id must be gloablly unique.
    It's a good idea to keep this consistent with your connector name
+   Note that it is crucial that the connectorId value match the name of
+   the const defined at the top of this file
    */
   connectorId: 'connectorExample',
 
@@ -267,18 +269,29 @@ const connectorExample = {
                    */
                   type: 'string',
                   description: 'The body of the HTTP request',
-                },
+                }
               },
+              /*
+               the 'required' array lists the properties that are required in the validation
+               of the input data to the capability
+               */ 
               required: ['body', 'url'],
-            },
+            }
           },
+          /* 
+           example of a valid input data
+           */
           example: {
             properties: {
               body: '{"hello": "world"}',
-            },
-          },
-        },
+              url: 'https://httpbin.org'
+            }
+          }
+        }
       },
+      /*
+      the output schema for data validation
+       */
       localOutputSchema: {
         output: {
           type: 'object',
@@ -288,15 +301,21 @@ const connectorExample = {
             },
             statusCode: {
               type: 'number',
-            },
-          },
-        },
-      },
-    },
+            }
+          }
+        }
+      }
+    }
   },
+  /*
+    the 'accountConfigView' object stores an 'items' array of the properties 
+    (as defined earlier) to display at the connection level.
+    In other words, these are the fields that are share by every flow
+    using the connection in the company.
+   */
   accountConfigView: {
     items: [{ propertyName: 'url' }],
-  },
+  }
 };
 
 module.exports = connectorExample;
