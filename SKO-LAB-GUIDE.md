@@ -258,7 +258,7 @@ After it completes, a yellow flower-box will be shown with commands and an instr
 
 Run the mentioned command.
 
-Next, the API component must be restarted. From your dashboard through https://davinci.pingidentity.com find your corresponding project.
+Next, the API component must be restarted. From your dashboard through https://davinci.pingidentity.cloud/ find your corresponding project.
 
 Look for and click the restart button.
 It looks a bit like: ↩️
