@@ -99,6 +99,19 @@ Next, copy this code block:
           },
         },
       },
+      localOutputSchema: {
+        output: {
+          type: 'object',
+          properties: {
+            rawResponse: {
+              type: 'object',
+            },
+            statusCode: {
+              type: 'number',
+            },
+          },
+        },
+      },
     },
 ```
 
@@ -234,7 +247,7 @@ And this line after 124
 
 The bottom of index.js should look like:
 
-```js
+```
 sdk.methods.handle_capability_postHTTP = handle_capability_postHTTP;
 sdk.methods.handle_capability_base64Encode = handle_capability_base64Encode;
 
@@ -258,7 +271,7 @@ After it completes, a yellow flower-box will be shown with commands and an instr
 
 Run the mentioned command.
 
-Next, the API component must be restarted. From your dashboard through https://davinci.pingidentity.cloud/ find your corresponding project.
+Next, the API component must be restarted. From your dashboard through https://davinci.pingidentity.com find your corresponding project.
 
 Look for and click the restart button.
 It looks a bit like: ↩️
