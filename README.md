@@ -1,7 +1,7 @@
 # Connector Example
 
 ## Overview:
-This example connector is here to help get you started with the development on the orchestration platform and understand the architecture.
+This example connector is here to help get you started with the development on the DaVinci platform and understand the architecture.
 
 # Getting started with the example connector
 
