@@ -5,7 +5,7 @@
  */
 const { expect } = require('chai');
 const sinon = require('sinon');
-const sdk = require('@skinternal/skconnectorsdk');
+const { logger } = require('@skinternal/skconnectorsdk');
 const api = require('../api');
 
 const { handle_capability_postHTTP } = require('../index');
@@ -20,7 +20,7 @@ describe('Unit Tests', () => {
 
     handle_capability_postHTTP(props.data).then(
       (res) => {
-        console.log(`res is: ${JSON.stringify(res)}`);
+        logger.info(`res is: ${JSON.stringify(res)}`);
         expect(res).to.be.an('object');
         expect(res.output).to.be.an('object');
         expect(res.output.rawResponse).to.be.an('object');
@@ -28,7 +28,7 @@ describe('Unit Tests', () => {
         stub1.restore();
       },
       (err) => {
-        console.log(`error is: ${error}`);
+        console.log(`error is: ${err}`);
         stub1.restore();
       }
     );
