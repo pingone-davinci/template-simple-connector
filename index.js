@@ -80,15 +80,28 @@ const handle_capability_postHTTP = async ({ properties }) => {
       eventName: 'continue',
     };
   } catch (err) {
-    if (err.response && err.response.status === 404) {
-      return {
+    if(err.response) {
+      throw new serr('postHTTPResponseError', { 
+        message: 'postHTTP response error',
+        httpResponseCode: err.response.status,          
         output: {
-          rawResponse: {},
+            rawResponse: err.response.data,
+            statusCode: err.response.status,
+            headers: err.response.headers
         },
-        eventName: 'continue',
-      };
+        details: {
+            rawResponse: err.response.data,
+            statusCode: err.response.status,
+            headers: err.response.headers
+        },
+      });
     }
-    throw compileErr('postHTTP', err);
+    // If we get here something went wrong not related to the API request
+    // logger.debug(`Unexpected error: ${err}`);
+    console.log(`Unexpected error: ${err}`);
+    throw new serr("unexpectedError", {
+      message: `postHTTP unexpected error: ${err}`
+    });
   }
 };
 
