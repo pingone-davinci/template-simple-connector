@@ -97,10 +97,15 @@ const handle_capability_postHTTP = async ({ properties }) => {
       });
     }
     // If we get here something went wrong not related to the API request
-    // logger.debug(`Unexpected error: ${err}`);
-    console.log(`Unexpected error: ${err}`);
-    throw new serr("unexpectedError", {
-      message: `postHTTP unexpected error: ${err}`
+    logger.error(`postHTTP error: ${err}`);
+    throw new serr('postHTTPError', {
+      message: `postHTTP error`,
+      output: {
+        errorMessage: `${err}`,
+      },
+      details: {
+        errorMessage: `${err}`,
+      },
     });
   }
 };
