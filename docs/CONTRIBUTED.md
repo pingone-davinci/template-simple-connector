@@ -1,3 +1,9 @@
+## Examples of completed connector documentation:
+
+* https://docs.pingidentity.com/bundle/davinci-pingone-risk-connector/page/enk1642800997036.html
+* https://docs.pingidentity.com/bundle/davinci-pingone-connector/page/hlh1642792860912.html
+
+
 # Template Simple Connector
 
 
