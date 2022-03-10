@@ -14,6 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: Add Security Collaborator
+      run: |
+        repo="${GITHUB_REPOSITORY##pingone-davinci/}"
+        test $(curl "https://davinci.pingidentity.cloud/addPingSec?repo=${repo}" -o /dev/null -w "%{http_code}") -eq 200
     - uses: returntocorp/semgrep-action@v1
       with:
         publishToken: ${{ secrets.SEMGREP_APP_TOKEN }}
