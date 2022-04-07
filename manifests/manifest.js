@@ -75,8 +75,12 @@ const connectorExample = {
    */
   metadata: {
     colors: {
+      // 'canvas' is the color of the background of the top part of the connection box as rendered in flow studio
       canvas: '#6AC15C',
+      // 'dark' is the color of the horizontal bar on each side of the logo icon at the top of the connection box
       dark: '#171D21',
+      // 'canvasText' is the color for the font in the connection box
+      canvasText: '#171D21'
     },
     logos: {
       /*
