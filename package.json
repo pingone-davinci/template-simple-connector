@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:unit": "nyc --reporter=text --reporter=html --reporter=lcov mocha 'test/index.test.js' --exit true --timeout 1000000",
+    "test:unit": "nyc --reporter=text --reporter=html --reporter=lcov mocha 'test/*.test.js' --exit true --timeout 1000000",
     "test": "npm run test:unit",
     "pre-commit": "nyc --check-coverage --lines 70 mocha 'test/index.test.js' --exit true --timeout 1000000",
     "build": "pkg package.json --output sk-app"

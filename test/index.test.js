@@ -7,13 +7,10 @@ const { expect } = require("chai");
 const sinon = require("sinon");
 const { logger } = require("@skinternal/skconnectorsdk");
 const api = require("../api");
-const { sdkInitializeTest } = require("./sdkInitializeTest.js");
 
 const { handle_capability_postHTTP } = require("../index");
 
 const props = require("./data/properties");
-
-sdkInitializeTest();
 
 describe("Unit Tests", () => {
   it("happy path", async () => {
