@@ -1,0 +1,20 @@
+on:
+  push:
+name: ConnectorValidation
+jobs:
+  connectorvalidation:
+    name: ConnectorValidation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: |
+          git clone --branch utils https://github.com/pingone-davinci/template-simple-connector.git utils
+          source utils/lib.sh
+          installDependencies
+      - name: Unit Tests
+        run: |
+          source utils/lib.sh 
+          lint
+          unitTest
+          test -z FAILURE
