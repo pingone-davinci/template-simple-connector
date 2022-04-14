@@ -19,12 +19,14 @@ installDependencies(){
 
 lint(){
   npx eslint -c ./utils/scripts/.eslintrc.json . \
+    && echo "INFO: Passed Linting" \
     || echo "ERROR: Failed Linting, Continuing" \
     && export FAILURE="true"
 }
 
 unitTest(){
   npx nyc --check-coverage --lines 80 mocha 'test/*.test.js' --exit true --timeout 1000000 \
+    && echo "INFO: Passed Unit Tests" \
     || echo "ERROR: Failed Unit Tests, Continuing" \
     && export FAILURE="true"
 }
