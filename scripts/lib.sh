@@ -18,7 +18,7 @@ installDependencies(){
 }
 
 lint(){
-  npx eslint -c ./utils/scripts/eslintrc.json .
+  npx eslint -c ./utils/scripts/.eslintrc.json .
 }
 
 unitTest(){
