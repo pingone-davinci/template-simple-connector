@@ -18,7 +18,7 @@ installDependencies(){
 }
 
 lint(){
-  npx eslint -c ./utils/scripts/.eslintrc.json . \
+  npx eslint -c ./utils/.eslintrc.json . \
     && echo "INFO: Passed Linting" \
     || echo "ERROR: Failed Linting, Continuing" \
     && export FAILURE="true"
