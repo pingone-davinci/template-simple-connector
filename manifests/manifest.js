@@ -141,7 +141,7 @@ const connectorExample = {
           - dropDownAsync
           - dropDownMultiSelect
           - dropdown
-          - dropdownWithCreate
+          - dropdownWithCreate (This allows the dropDown to suggest values but also allow freeform input, make sure to not set the default value)
           - formFieldsList
           - functionArgumentList
           - geofence
