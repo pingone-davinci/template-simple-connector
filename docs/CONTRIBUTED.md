@@ -7,8 +7,6 @@
 # Template Simple Connector
 
 
-## Doc draft
-
 Author: 
 
 
