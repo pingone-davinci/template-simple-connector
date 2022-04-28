@@ -3,7 +3,7 @@ const sdk = require('@skinternal/skconnectorsdk');
 const { serr, logger } = require('@skinternal/skconnectorsdk');
 const { get } = require('lodash');
 
-const connectorManifest = require('./manifests/manifest');
+const connectorManifest = require('./manifest/manifest');
 
 const redisList = 'connectorOpenweather';
 const api = require('./api')
