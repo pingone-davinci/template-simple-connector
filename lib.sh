@@ -23,7 +23,7 @@ lint(){
     echo "ERROR: Failed Linting, Continuing"
     export FAILURE="true"
   else
-    echo "INFO: Passed Linting" \
+    echo "INFO: Passed Linting"
   fi
 }
 
@@ -33,6 +33,6 @@ unitTest(){
     echo "ERROR: Failed Unit Tests, Continuing"
     export FAILURE="true"
   else
-    echo "INFO: Passed Unit Tests" \
+    echo "INFO: Passed Unit Tests"
   fi
 }
