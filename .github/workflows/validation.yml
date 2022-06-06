@@ -17,4 +17,4 @@ jobs:
           source utils/lib.sh 
           lint
           unitTest
-          test -z FAILURE
+          test -z "${FAILURE}"
