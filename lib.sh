@@ -28,7 +28,7 @@ lint(){
 }
 
 unitTest(){
-  npx nyc --check-coverage --lines 80 mocha 'test/*.test.js' --exit true --timeout 1000000
+  npx nyc --check-coverage --lines 90 mocha 'test/*.test.js' --exit true --timeout 1000000
   if test $? -ne 0 ; then
     echo "ERROR: Failed Unit Tests, Continuing"
     export FAILURE="true"
