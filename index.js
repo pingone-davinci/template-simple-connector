@@ -1,6 +1,6 @@
 /* eslint-disable new-cap */
 const sdk = require('@skinternal/skconnectorsdk');
-const { serr, logger } = require('@skinternal/skconnectorsdk');
+const { serr:sdkSerr, logger } = require('@skinternal/skconnectorsdk');
 const { get } = require('lodash');
 
 const connectorManifest = require('./manifest/manifest');
@@ -28,7 +28,7 @@ const initialize = async () => {
   }
 };
 
-const handle_capability_getWeather = async ({ properties, companyId }) => {
+const handle_capability_getWeather = async ({ properties, companyId, serr }) => {
   logger.info('overriding handle_capability_getWeather');
 
   try {
@@ -41,8 +41,12 @@ const handle_capability_getWeather = async ({ properties, companyId }) => {
     // view AND the flow config view
     const {appid, lat, lon, units} = properties;
 
-    // Call the getWeather API, note the axios library will throw an error for any non 2xx status codes
-    const response = await api.getWeather({appid, lat, lon, units})
+    // Call the getWeather API
+    const response = await api.doAxiosRequest(() => api.getWeather({
+      appid,
+      lat,
+      lon,
+      units}), 'getWeatherResponseError', 'getWeather API error', serr);
 
     return {
       output: {
@@ -59,34 +63,16 @@ const handle_capability_getWeather = async ({ properties, companyId }) => {
       },
       eventName: 'continue',
     };
-  // Deal with errors.  'serr' is the expected error type from Davinci
+  // Deal with errors.  'serr'(imported as 'sdkSerr') is the expected error type from Davinci
   } catch (err) {
-    if(err.response) {
-      throw new serr('getWeatherResponseError', { 
-        message: 'getWeather response error',
-        httpResponseCode: err.response.status,          
-        output: {
-            rawResponse: err.response.data,
-            statusCode: err.response.status,
-            headers: err.response.headers
-        },
-        details: {
-            rawResponse: err.response.data,
-            statusCode: err.response.status,
-            headers: err.response.headers
-        },
-      });
+    if (err instanceof sdkSerr) {
+      throw err;
     }
+
     // If we get here something went wrong not related to the API request
     logger.error(`getWeather error: ${err}`);
-    throw new serr("getWeatherError", {
-      message: `getWeather error`,
-      output: {
-        errorMessage: `${err}`
-      },
-      details: {
-        errorMessage: `${err}`
-      }
+    throw new serr('getWeatherError', {
+      message: 'Something went wrong.'
     });
   }
 };

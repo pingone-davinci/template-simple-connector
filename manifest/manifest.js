@@ -304,6 +304,20 @@ const connectorOpenweather = {
       },
 
       /*
+       the 'localizedErrors' object would allow user to customize error message.
+       Leave the value of each error key blank as this will show user the programmed error message, 
+       in this case "getWeather response error", when error getWeatherResponseError is returned.
+       If user chooses to provide value in the "Mappings (Error Message)" tab when configuring
+       the capability that value will be returned as error message instead
+      */ 
+      "localizedErrors": {
+        "en": {
+          "getWeatherResponseError": "",
+          "getWeatherError": "",
+        }
+      },
+
+      /*
        the 'payloadInputSchema' object defines the input schema for this capability
        You will need to edit only the innermost level of this object to describe
        how the platform must marshall data provided as valid input
