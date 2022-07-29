@@ -93,7 +93,7 @@ const connectorOpenweather = {
         or use the pingIndentity.svg logo
        */      
       "canvas": {
-        "imageFileName": "openweather.svg"
+        "imageFileName": "exampleConnector.svg"
       }
     }
   },
