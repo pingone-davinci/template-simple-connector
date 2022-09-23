@@ -1,4 +1,8 @@
+const manifestVersion = require('../package.json').version;
+
 const connectorOpenweather = {
+  manifestVersion,
+
   /*
    This is a simple string to name your connector.
    If the service your connector is feature-rich to the extent
