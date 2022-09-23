@@ -5,7 +5,7 @@ const { get } = require('lodash');
 
 const connectorManifest = require('./manifest/manifest');
 
-const redisList = 'connectorOpenweather';
+const redisList = connectorManifest.connectorId;
 const api = require('./api')
 
 const initializeHTTPClient = async (setAxios, companyId) => {
@@ -20,10 +20,10 @@ const initialize = async () => {
       return;
     }
     // The real thing of note here: registers the connector with the SDK and subscribes to REDIS changes
-    const response = await sdk.initalize(redisList);
-    logger.info('Started connector-openweather:', response);
+    const response = await sdk.initialize(redisList);
+    logger.info('Started ' + connectorManifest.serviceName, response);
   } catch (err) {
-    logger.error('Error starting connector-openweather');
+    logger.error('Error starting ' + connectorManifest.serviceName);
     logger.error(err);
   }
 };
