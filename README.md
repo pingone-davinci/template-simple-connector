@@ -18,7 +18,6 @@ A connector is composed of 3 main things:
     
   For example, `sdk.methods.handle_capability_validateIPAddress` for a method that would verify an IP address is allowed.
   * Provide unit tests validating that your code is robust
-  * Provide a set of 3 logo files
   * An example flow demonstrating your connector
   * In case your connector leverages a third-party service, there will need to be a test account provided such that integration tests can be run to demonstrate end-to-end viability of your code
 
@@ -32,16 +31,3 @@ To run unit tests execute `npm test` which will execute the unit tests defined i
 
 # Debugging your connector
   As you write the code for your connector, you will want to be able to debug and test it. Use VSCode built-in debugger to run and debug yor code.
-  
-# Try it in a flow
-
-### Logo files specification
-  Your connector needs to provide 3 images in the Portable Network Graphics format (PNG) in 3 specific sizes:
-  * 20x20px 
-  * 40x40px
-  * 60x60px
-
-They respectively need to be named:
-  * `logo.png`
-  * `logo@2x.png`
-  * `logo@3x.png`
