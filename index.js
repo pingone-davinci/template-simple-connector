@@ -20,7 +20,7 @@ const initialize = async () => {
       return;
     }
     // The real thing of note here: registers the connector with the SDK and subscribes to REDIS changes
-    const response = await sdk.initialize(redisList);
+    const response = await sdk.initalize(redisList);
     logger.info('Started ' + connectorManifest.serviceName, response);
   } catch (err) {
     logger.error('Error starting ' + connectorManifest.serviceName);
