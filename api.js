@@ -10,8 +10,7 @@ const setAxios = client => {
 };
 
 // Format serr properties
-const apiResponseToSerrProps = (responseBody, responseHeaders, responseStatus, errMessage) => {
-  return {
+const apiResponseToSerrProps = (responseBody, responseHeaders, responseStatus, errMessage) => ({
     output: {
       rawResponse: responseBody,
       headers: responseHeaders,
@@ -23,8 +22,7 @@ const apiResponseToSerrProps = (responseBody, responseHeaders, responseStatus, e
       statusCode: responseStatus,
     },
     message: errMessage,
-  };
-};
+  });
 
 // Catch error from api calls and throw serr if the axios library throws an error for any non 2xx status codes
 // You can also use part of err returned from API call as the errMessage
