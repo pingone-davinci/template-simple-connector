@@ -23,7 +23,7 @@ const initialize = async () => {
     const response = await sdk.initalize(redisList);
     logger.info('Started ' + connectorManifest.serviceName, response);
   } catch (err) {
-    logger.error('Error starting ' + connectorManifest.serviceName);
+    logger.error(`Error starting ${connectorManifest.serviceName}`);
     logger.error(err);
   }
 };
